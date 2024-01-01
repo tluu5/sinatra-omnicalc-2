@@ -10,8 +10,8 @@ get("/add") do
 end
 
 get("/wizard_add") do
-  @first_num = params.fetch("first_num").to_f
-  @second_num = params.fetch("second_num").to_f
+  @first_num = params.fetch("first_number").to_f
+  @second_num = params.fetch("second_number").to_f
   @result = @first_num + @second_num
   erb(:add_result)
 end
@@ -21,9 +21,9 @@ get("/subtract") do
 end
 
 get("/wizard_subtract") do
-  @first_num = params.fetch("first_num").to_f
-  @second_num = params.fetch("second_num").to_f
-
+  @first_num = params.fetch("first_number").to_f
+  @second_num = params.fetch("second_number").to_f
+  @result = @first_num - @second_num
   erb(:sub_result)
 end
 
@@ -32,6 +32,9 @@ get("/multiply") do
 end
 
 get("/wizard_multiply") do
+  @first_num = params.fetch("first_number").to_f
+  @second_num = params.fetch("second_number").to_f
+  @result = @first_num * @second_num
   erb(:mult_result)
 end
 
@@ -40,5 +43,8 @@ get("/divide") do
 end
 
 get("/wizard_divide") do
+  @first_num = params.fetch("first_number").to_f
+  @second_num = params.fetch("second_number").to_f
+  @result = @first_num / @second_num
   erb(:div_result)
 end
